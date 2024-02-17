@@ -31,7 +31,7 @@ public class SecurityConfiguration {
                                 (
                                         "/api/v1/auth/register",
                                         "/api/v1/auth/login",
-                                        "/api/v1/welcome"
+                                        "/api/v1/auth/welcome"
                                 ).permitAll()
                         .requestMatchers("/api/v1/products").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")

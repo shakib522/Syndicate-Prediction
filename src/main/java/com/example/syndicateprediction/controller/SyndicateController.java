@@ -1,6 +1,8 @@
 package com.example.syndicateprediction.controller;
 
 
+import com.example.syndicateprediction.model.LoginRequest;
+import com.example.syndicateprediction.model.LoginResponse;
 import com.example.syndicateprediction.model.RegisterRequest;
 import com.example.syndicateprediction.model.RegisterResponse;
 import com.example.syndicateprediction.service.AuthService;
@@ -24,5 +26,10 @@ public class SyndicateController {
     @PostMapping("/register")
     public ResponseEntity<RegisterResponse> register(@RequestBody RegisterRequest registerRequest) {
         return ResponseEntity.status(201).body(authService.register(registerRequest));
+    }
+
+    @PostMapping("/login")
+    public ResponseEntity<LoginResponse> login(@RequestBody LoginRequest loginRequest) {
+        return ResponseEntity.status(200).body(authService.login(loginRequest));
     }
 }

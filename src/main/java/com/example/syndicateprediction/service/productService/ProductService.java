@@ -11,4 +11,6 @@ public interface ProductService {
     DefaultMessage createProduct(Product product) throws DefaultException;
 
     List<Product> getAllProducts();
+
+    DefaultMessage editProduct(Product product, Integer productId);
 }

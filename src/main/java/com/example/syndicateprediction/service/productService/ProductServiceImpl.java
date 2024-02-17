@@ -9,6 +9,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -28,5 +29,20 @@ public class ProductServiceImpl implements ProductService{
     @Override
     public List<Product> getAllProducts() {
         return productRepository.findAll();
+    }
+
+    @Override
+    public DefaultMessage editProduct(Product product, Integer productId) {
+        Optional<Product> productOptional = productRepository.findByProductId(productId);
+        if (productOptional.isEmpty()){
+            throw new DefaultException("Product not found", 404);
+        }
+
+        Product product1 = productOptional.get();
+        product1.setProduct_name(product.getProduct_name());
+        product1.setSet_product_price(product.getSet_product_price());
+        product1.setProduct_market_price(product.getProduct_market_price());
+         productRepository.save(product1);
+         return DefaultMessage.builder().message("Product updated").statusCode(200).status("Success").build();
     }
 }

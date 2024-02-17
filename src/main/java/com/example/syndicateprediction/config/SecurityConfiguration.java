@@ -36,6 +36,7 @@ public class SecurityConfiguration {
                         .requestMatchers("/api/v1/products").permitAll()
                         .requestMatchers("/api/v1/admin/**").hasAuthority("ADMIN")
                         .requestMatchers("/api/v1/govt/**").hasAuthority("GOVT")
+                        .requestMatchers("/api/v1/user/getAllProducts").permitAll()
                         .anyRequest()
                         .authenticated())
                 .sessionManagement((session) -> session

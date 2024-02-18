@@ -8,7 +8,8 @@ This project is a Syndicate Prediction System designed to provide real-time mark
 #### Technologies Used
 - Java
 - Spring Boot
-- Lombok
+- Spring Security
+- JWT token
 - MySql
 
 #### Controllers

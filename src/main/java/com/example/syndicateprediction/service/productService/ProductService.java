@@ -12,5 +12,5 @@ public interface ProductService {
 
     List<Product> getAllProducts();
 
-    DefaultMessage editProduct(Product product, Integer productId);
+    DefaultMessage editProduct(Product product, String product_name);
 }

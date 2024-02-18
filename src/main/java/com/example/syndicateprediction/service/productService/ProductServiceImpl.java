@@ -32,8 +32,8 @@ public class ProductServiceImpl implements ProductService{
     }
 
     @Override
-    public DefaultMessage editProduct(Product product, Integer productId) {
-        Optional<Product> productOptional = productRepository.findByProductId(productId);
+    public DefaultMessage editProduct(Product product, String product_name) {
+        Optional<Product> productOptional = productRepository.findByProductName(product_name);
         if (productOptional.isEmpty()){
             throw new DefaultException("Product not found", 404);
         }

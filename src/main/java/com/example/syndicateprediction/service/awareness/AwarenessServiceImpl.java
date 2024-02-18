@@ -27,6 +27,6 @@ public class AwarenessServiceImpl implements AwarenessService {
 
     @Override
     public SyndicateDetectionMessage syndicateDetection() {
-        return SyndicateDetectionMessage.builder().message("Egg syndicate possibility in saheb bajar,Rajshahi.Please take necessary steps").heading("Possible Syndicate of Egg in this month").build();
+        return SyndicateDetectionMessage.builder().message("Possible egg price manipulation  in Saheb Bajar,Rajshahi.Please take necessary steps").heading("Possible Syndicate of Egg in this month").build();
     }
 }
